@@ -1,0 +1,9 @@
+type Todo {
+    id: ID!
+    name: String!
+    due_date: Date
+    finished: Boolean
+    user: User @belongsTo
+    created_at: DateTime!
+    updated_at: DateTime!
+}
