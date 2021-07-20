@@ -7,3 +7,8 @@ type Todo {
     created_at: DateTime!
     updated_at: DateTime!
 }
+
+extend type Query @guard {
+    todos: [Todo!] @paginate(defaultCount: 10)
+    todo(id: ID @eq): Todo! @find
+}
